@@ -1,0 +1,7 @@
+region                = "eu-central-1"
+us_region             = "us-east-1"
+bucket_name           = "tf-iu-cloudprogramming-bucket"
+domain_name           = "iu-fa-cloudprogramming.site"
+lambda_function_name  = "contact_handler"
+dynamodb_table_name   = "UserEmails"
+lambda_runtime        = "nodejs18.x"
