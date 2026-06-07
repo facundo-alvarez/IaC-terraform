@@ -18,7 +18,7 @@ submissions.
 ## Tech stack
 
 - Terraform
-- AWS: S3, CloudFront, ACM, Route 53, DynamoDB, Lambda, API Gateway, IAM
+- AWS: S3, CloudFront, ACM, Route 53, DynamoDB, Lambda, API Gateway, IAM, Amazon SES
 
 ## Architecture
 
