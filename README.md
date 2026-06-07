@@ -22,9 +22,8 @@ submissions.
 
 ## Architecture
 
-```
 ![Infrastructure](infrastructure[1].png)
-```
+
 
 ## Getting started
 
