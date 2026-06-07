@@ -6,16 +6,14 @@ submissions.
 
 ## What it provisions
 
-- **Static hosting** — S3 bucket configured for website hosting.
-- **CDN + HTTPS** — CloudFront distribution with an ACM TLS certificate
-  (DNS-validated via Route 53) and HTTP→HTTPS redirection.
-- **DNS** — Route 53 hosted zone and records, including an alias to the CloudFront
-  distribution.
-- **Serverless backend** — a Lambda function fronted by an HTTP API Gateway
-  (`POST /submit`) that stores submissions in DynamoDB.
-- **Data store** — DynamoDB table (pay-per-request) keyed by email.
-- **Least-privilege IAM** — a dedicated execution role and scoped policy for the Lambda
-  (DynamoDB writes, SES email, CloudWatch logs).
+- **S3**: Used for website hosting, ensuring fast content delivery.
+- **Route 53**: Configured for DNS management and domain name resolution.
+- **CloudFront**: Set up as a content delivery network (CDN) to cache and serve the website.
+- **ACM (AWS Certificate Manager)**: Provisioned SSL certificates for HTTPS security.
+- **DynamoDB**: Used as a NoSQL database to store data.
+- **Simple Email Service**: To send emails as autoreply.
+- **Lambda**: Serverless functions created to handle backend operations.
+- **API Gateway**: Configured to expose Lambda functions as RESTful APIs
 
 ## Tech stack
 
@@ -25,11 +23,7 @@ submissions.
 ## Architecture
 
 ```
-            ┌──────────────┐
- Browser ──▶│  CloudFront  │──▶ S3 (static site)
-            └──────────────┘
- Browser ──▶ API Gateway ──▶ Lambda ──▶ DynamoDB
-                                   └──▶ SES (email)
+![Infrastructure](infrastructure[1].png)
 ```
 
 ## Getting started
